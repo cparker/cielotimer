@@ -6,17 +6,11 @@
 <h1>{{done}}</h1>
 
 
-<label>Click to record some audio</label>
+<label>Record some audio to play when timer hits 0</label><br/>
 <input type="button" value="start record" ng-click="startRecord()"/>
 <input type="button" value="stop record" ng-click="stopRecord()"/>
 <input type="button" value="play" ng-click="play()"/>
+<h1>{{recordCue}}</h1>
 
-<audio controls>
-    <source src="{{audioURL}}"/>
-</audio>
-
-<a href="{{audioURL}}">playme.wav</a>
-
-<pre>{{audioURL}}</pre>
 <pre>{{status}}</pre>
 
