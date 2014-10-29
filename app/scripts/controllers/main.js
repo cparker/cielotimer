@@ -27,7 +27,11 @@ angular.module('cielotimerApp')
             $scope.$apply();
         };
 
-        $scope.audio_context = new AudioContext;
+        try {
+            $scope.audio_context = new AudioContext;
+        } catch (er) {
+            $scope.audio_context = new webkitAudioContext;
+        }
 
         $window.navigator.webkitGetUserMedia({audio: true}, $scope.startUserMedia, function (e) {
             $scope.loggit('no audio input : ' + e);
