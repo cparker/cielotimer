@@ -20,9 +20,34 @@
     experience.</p>
 <![endif]-->
 
-<h1>Cielo timer</h1>
+<div ng-class="{coverGreen : coverGreen, coverFadeout : coverFadeout}" class="cover"></div>
 
-<div ng-view=""></div>
+<main ng-controller="rootCtrl">
+    <div class="mainContainer">
+        <header>
+            <div class="burger" ng-click="toggleBurger()"></div>
+            <div class="topBanner">{{activeTimer}}</div>
+            <a href="#/audio">
+                <div class="rightHeader"></div>
+            </a>
+        </header>
+
+        <div class="centerContainer">
+            <nav ng-class="{leftNavOpen:leftNavOpen}" class="leftNav leftNavClosed">
+                <ng-include src="'/views/leftNav.html'"/>
+            </nav>
+            <div class="center">
+                <div class="ngview" ng-view=""></div>
+            </div>
+        </div>
+
+        <div ng-class="{timerConfigActive:timerConfigActive}" class="timerConfig">
+            <ng-include src="'/views/timerConfig.html'"/>
+        </div>
+
+        <div class="footer">footer</div>
+    </div>
+</main>
 
 
 <!-- build:js(.) scripts/oldieshim.js -->
@@ -49,8 +74,11 @@
 <script src="scripts/recorder.js"></script>
 <script src="scripts/recorderWorker.js"></script>
 <script src="scripts/app.js"></script>
-<script src="scripts/controllers/main.js"></script>
+<script src="scripts/controllers/audio.js"></script>
 <script src="scripts/controllers/about.js"></script>
+<script src="scripts/controllers/timer.js"></script>
+<script src="scripts/controllers/dataService.js"></script>
+<script src="scripts/controllers/rootCtrl.js"></script>
 <!-- endbuild -->
 </body>
 </html>
