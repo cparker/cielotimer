@@ -1,0 +1,10 @@
+<div ng-click="toggleTimerConfig()" class="timer" >
+    <div class="timerLeftSpacer">&nbsp;</div>
+    <div class="timerInner" ng-class="{timerPrestart:timerState == 'prestart'}">{{currentTimerString}}</div>
+    <div class="timerRightSpacer">&nbsp;</div>
+</div>
+
+<div class="timerControls">
+    <div ng-click="startCountup()" class="start">Start</div>
+    <div ng-click="stopCountup()" class="stop">Stop</div>
+</div>

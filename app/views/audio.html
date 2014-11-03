@@ -1,0 +1,16 @@
+<label>Enter a number of seconds to count down</label>
+<input type="number" min="0" ng-model="enteredSeconds"/>
+<input type="button" value="start" ng-click="startCountdown()"/>
+
+<h1>{{currentTimerString}}</h1>
+<h1>{{done}}</h1>
+
+
+<label>Record some audio to play when timer hits 0</label><br/>
+<input type="button" value="start record" ng-click="startRecord()"/>
+<input type="button" value="stop record" ng-click="stopRecord()"/>
+<input type="button" value="play" ng-click="play()"/>
+<h1>{{recordCue}}</h1>
+
+<pre>{{status}}</pre>
+

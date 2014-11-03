@@ -1,0 +1,14 @@
+@import 'reset';
+
+html {
+  height:100%;
+  width:100%;
+}
+
+body {
+  // sets the font to 100% of the parent element's font size
+  font: 100% Helvetica, sans-serif;
+  background-color: #efefef;
+  width:100%;
+  height:100%;
+}

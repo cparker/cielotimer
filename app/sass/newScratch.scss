@@ -1,0 +1,32 @@
+@import 'base';
+@import 'mixins';
+
+$boxOneColor: red;
+$boxTwoColor: green;
+$boxThreeColor: blue;
+
+.boxes {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  .boxOne, .boxTwo, .boxThree {
+    flex: 1;
+    height:100px;
+  }
+
+  .boxOne {
+    background-color: $boxOneColor;
+    @include border-radius(10px);
+  }
+
+  .boxTwo {
+    background-color: $boxTwoColor;
+  }
+
+  .boxThree {
+    background-color: $boxThreeColor;
+  }
+
+}
+

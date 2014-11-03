@@ -1,0 +1,14 @@
+$colorOne : red;
+$colorTwo : blue;
+$colorThree : green;
+
+
+.important {
+  background-color:$colorOne;
+  width:100;
+  height:200;
+  margin:20;
+  padding:50;
+  text-align: vertical;
+
+}
