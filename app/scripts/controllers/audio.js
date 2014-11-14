@@ -1,4 +1,8 @@
 'use strict';
+/* global Recorder:false */
+/* global AudioContext:false */
+/* global webkitAudioContext:false */
+/* global moment:false */
 
 /**
  * @ngdoc function
@@ -8,17 +12,17 @@
  * Controller of the cielotimerApp
  */
 angular.module('cielotimerApp')
-    .controller('audioCtrl', function ($scope, $interval, $window, $sce) {
+    .controller('audioCtrl', function ($scope, $interval, $window) {
 
         $scope.loggit = function (t) {
             $scope.status += '\n\r' + t;
         };
 
         $scope.startUserMedia = function (stream) {
-            var input = $scope.audio_context.createMediaStreamSource(stream);
+            var input = $scope.audioContext.createMediaStreamSource(stream);
             $scope.loggit('Media stream created.');
 
-            //input.connect($scope.audio_context.destination);
+            //input.connect($scope.audioContext.destination);
             //$scope.loggit('Input connected to audio context destination.');
 
             $scope.recorder = new Recorder(input);
@@ -28,9 +32,9 @@ angular.module('cielotimerApp')
         };
 
         try {
-            $scope.audio_context = new AudioContext;
+            $scope.audioContext = new AudioContext();
         } catch (er) {
-            $scope.audio_context = new webkitAudioContext;
+            $scope.audioContext = new webkitAudioContext();
         }
 
         $window.navigator.webkitGetUserMedia({audio: true}, $scope.startUserMedia, function (e) {
@@ -44,7 +48,7 @@ angular.module('cielotimerApp')
                 $scope.currentTimerString = moment($scope.currentTimerMS).format('mm:ss.S');
             }
 
-            if ($scope.currentTimerMS == 0) {
+            if ($scope.currentTimerMS === 0) {
                 $interval.cancel($scope.interval);
                 $scope.done = 'DING!';
                 $scope.play();
@@ -60,7 +64,7 @@ angular.module('cielotimerApp')
         $scope.recordCountdown = function () {
             $scope.countDown -= 1;
             $scope.recordCue = $scope.countDown;
-            if ($scope.countDown == 0) {
+            if ($scope.countDown === 0) {
                 $scope.recordCue = 'SPEAK';
                 $interval.cancel($scope.recordCountdownInterval);
                 $scope.recorder.clear();
@@ -87,14 +91,14 @@ angular.module('cielotimerApp')
             $scope.recorder.exportWAV(function (blob) {
                 console.log('got blob ' + blob);
                 var reader = new FileReader();
-                reader.onload = function (someevent) {
+                reader.onload = function () {
                     console.log('we have an array buf? ' + reader.result);
 
-                    $scope.audio_context.decodeAudioData(reader.result, function (audioBuf) {
+                    $scope.audioContext.decodeAudioData(reader.result, function (audioBuf) {
                         console.log('playback');
-                        var source = $scope.audio_context.createBufferSource();
+                        var source = $scope.audioContext.createBufferSource();
                         source.buffer = audioBuf;
-                        source.connect($scope.audio_context.destination);
+                        source.connect($scope.audioContext.destination);
                         source.start(0);
                     });
 

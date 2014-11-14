@@ -1,32 +1,124 @@
 @import 'base';
 @import 'mixins';
 
-$boxOneColor: red;
-$boxTwoColor: green;
-$boxThreeColor: blue;
+$iPhone5Width: 320px;
+$iPhone5Height: 568px;
 
-.boxes {
-  display: flex;
-  flex-direction: row;
+$iPadHeight: 768px;
+$iPadWidth: 1024px;
+
+body {
+  background-color: lightgreen;
+}
+
+input[type="number"] {
+  padding: 10px;
+  border: solid 5px #c9c9c9;
+  transition: border 0.3s;
+  font-size: 1.8rem;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+input[type="number"]:focus,
+input[type="number"].focus {
+  border: solid 5px #969696;
+}
+
+.inputRow, .controlRow {
+  @include flexParent(row);
   width: 100%;
+  justify-content: space-around;
+  margin-top: 20px;
+  margin-bottom: 20px;
 
-  .boxOne, .boxTwo, .boxThree {
-    flex: 1;
-    height:100px;
+  .label {
+    width: 7.5rem;
+    overflow: hidden;
+    text-align: right;
+    font-size: 1.4rem;
+    line-height: 55px;
   }
 
-  .boxOne {
-    background-color: $boxOneColor;
-    @include border-radius(10px);
+  .control {
+    width: 5.0rem;
+    display: inherit;
   }
+}
 
-  .boxTwo {
-    background-color: $boxTwoColor;
+.controlRow .control {
+  text-align: center;
+  display: inline;
+  height: 4.0rem;
+  width: 4.0rem;
+  margin-left: -20px;
+}
+
+.controlRowWrapper {
+  width: 80%;
+  margin: auto;
+  margin-left: 5%;
+}
+
+.control.up {
+}
+
+.control.up.one {
+  @include backgroundImage('/images/chevUp.png');
+  background-position-y: 96%;
+}
+
+.control.down.one {
+  @include backgroundImage('/images/chevDown.png');
+}
+
+.control.up.ten {
+  @include backgroundImage('/images/chev2Up.png');
+  background-position-y: 86%;
+}
+
+.control.down.ten {
+  @include backgroundImage('/images/chev2Down.png');
+}
+
+.control.down {
+}
+
+.timerDigits {
+  font-family: "Impact" sans-serif;
+  font-size: 10vw;
+  width: 100%;
+  text-align: center;
+}
+
+// styles for IPHONE 5 in either orientation
+@media only screen and (min-device-width: $iPhone5Width) and (max-device-width: $iPhone5Height) {
+  .timerDigits {
+    font-size: 20vw;
   }
+}
 
-  .boxThree {
-    background-color: $boxThreeColor;
+// styles for IPHONE 5 in portrait
+@media only screen and (min-device-width: $iPhone5Width) and (max-device-width: $iPhone5Height) and (orientation: portrait) {
+  .timerDigits {
+    font-size: 20vw;
+    color: pink;
   }
+}
 
+// styles for IPAD
+@media only screen and (min-device-width: $iPadHeight) and (max-device-width: $iPadWidth) {
+  .timerDigits {
+    font-size: 20vw;
+    color: purple;
+  }
+}
+
+// styles for RETINA IPAD
+@media only screen and (min-device-width: $iPadHeight) and (max-device-width: $iPadWidth) and (-webkit-min-device-pixel-ratio: 2) {
+  .timerDigits {
+    font-size: 20vw;
+    color: orange;
+  }
 }
 

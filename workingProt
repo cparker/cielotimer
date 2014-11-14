@@ -1,0 +1,85 @@
+// Protractor configuration
+// https://github.com/angular/protractor/blob/master/referenceConf.js
+
+'use strict';
+
+exports.config = {
+
+    // The timeout for each script run on the browser. This should be longer
+    // than the maximum time your application needs to stabilize between tasks.
+    allScriptsTimeout: 120000,
+
+    // The location of the selenium standalone server .jar file if you need to specify it.
+    // seleniumServerJar: 'node_modules/protractor/selenium/selenium-server-standalone-2.41.0.jar',
+
+    // The port to start the selenium server on, or null if the server should
+    // find its own unused port.
+    seleniumPort: null,
+
+    // Chromedriver location is used to help the selenium standalone server
+    // The location can be specified if you need it.
+    // chromeDriver: 'node_modules/protractor/selenium/chromedriver',
+
+    // ----- What tests to run -----
+    // Spec patterns are relative to the location of this config.
+    specs: [
+        'test/e2e/*.js'
+    ],
+
+    // ----- Capabilities to be passed to the webdriver instance ----
+    // https://code.google.com/p/selenium/wiki/DesiredCapabilities
+    // https://code.google.com/p/selenium/source/browse/javascript/webdriver/capabilities.js
+//    capabilities: {
+//        'browserName': 'chrome',
+//        chromeOptions: {
+//            excludeSwitches: ["ignore-certificate-errors"]
+//        }
+//    },
+//    capabilities: {
+//        'browserName': 'phantomjs',
+//        'phantomjs.binary.path': 'node_modules/phantomjs/bin/phantomjs'
+//    },
+
+//    multiCapabilities: [
+//        {browserName: 'firefox'},
+//        {browserName: 'chrome'}
+//    ],
+    chromeOnly: true,
+    chromeDriver: '/usr/local/lib/node_modules/protractor/selenium/chromedriver',
+
+    // A base URL for your application under test. Calls to protractor.get()
+    // with relative paths will be prepended with this.
+    baseUrl: 'http://localhost:' + (process.env.PORT || '9001'),
+
+    // Selector for the element housing the angular app - this defaults to
+    // body, but is necessary if ng-app is on a descendant of <body>
+    rootElement: 'body',
+
+//    onPrepare: function() {
+//        var ptor = protractor.getInstance();
+//        var backendMocks = function() {
+//            angular.module('backendMocks', ['httpBackendMocks']).run(function() {
+//            });
+//        };
+//        ptor.addMockModule('backendMocks', backendMocks);
+//    },
+    // ----- The test framework -----
+    //
+    // Jasmine and Cucumber are fully supported as a test and assertion framework.
+    // Mocha has limited beta support. You will need to include your own
+    // assertion framework if working with mocha.
+    framework: 'jasmine',
+
+    jasmineNodeOpts: {
+        // onComplete will be called just before the driver quits.
+        onComplete: null,
+        // If true, display spec names.
+        isVerbose: true,
+        // If true, print colors to the terminal.
+        showColors: true,
+        // If true, include stack traces in failures.
+        includeStackTrace: true,
+        // Default time to wait in ms before a test fails.
+        defaultTimeoutInterval: 30000
+    }
+};

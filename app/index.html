@@ -2,7 +2,7 @@
 <html class="no-js">
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>cielotimer</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -11,7 +11,7 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/newMain.css">
     <!-- endbuild -->
 </head>
 <body ng-app="cielotimerApp">
@@ -41,11 +41,14 @@
             </div>
         </div>
 
-        <div ng-class="{timerConfigActive:timerConfigActive}" class="timerConfig">
+        <div ng-controller="timerConfigCtrl" ng-class="{timerConfigActive:timerConfigActive}" class="timerConfig">
             <ng-include src="'/views/timerConfig.html'"/>
         </div>
 
-        <div class="footer">footer</div>
+        <div class="timerButtonFooter">
+            <ng-include src="'/views/timerButtons.html'"/>
+        </div>
+        <div class="footer">Copyright 2014-2015 Crossfit Cielo</div>
     </div>
 </main>
 
@@ -75,10 +78,10 @@
 <script src="scripts/recorderWorker.js"></script>
 <script src="scripts/app.js"></script>
 <script src="scripts/controllers/audio.js"></script>
-<script src="scripts/controllers/about.js"></script>
 <script src="scripts/controllers/timer.js"></script>
 <script src="scripts/controllers/dataService.js"></script>
 <script src="scripts/controllers/rootCtrl.js"></script>
+<script src="scripts/controllers/timerConfigCtrl.js"></script>
 <!-- endbuild -->
 </body>
 </html>

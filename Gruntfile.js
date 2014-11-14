@@ -41,8 +41,11 @@ module.exports = function (grunt) {
                 }
             },
             jsTest: {
-                files: ['test/spec/{,*/}*.js'],
-                tasks: ['newer:jshint:test', 'karma']
+                files: [
+                    'test/spec/{,*/}*.js',
+                    'test/spec/scratch/**/*.js'
+                ],
+                tasks: ['newer:jshint:test', 'karma:unitscratch']
             },
             styles: {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
@@ -360,21 +363,53 @@ module.exports = function (grunt) {
             unit: {
                 configFile: 'test/karma.conf.js',
                 singleRun: true
+            },
+
+            unitscratch: {
+                configFile: 'test/karma-scratch.conf.js',
+                singleRun:true
             }
         },
-        sass : {
-            dist : {
-                options : {
-                    style : "Expanded"
+        sass: {
+            dist: {
+                options: {
+                    style: 'Expanded'
                 },
-                files : {
-                    "/styles/newMain.css" : "/sass/newMain.scss"
+                files: {
+                    '/styles/newMain.css': '/sass/newMain.scss'
                 }
             }
 
+        },
+        protractor: {
+            options: {
+                configFile: 'protractor.conf.js',
+                keepAlive: true, // If false, the grunt process stops when the test fails.
+                noColor: false, // If true, protractor will not use colors in its output.
+                args: {
+                    // Arguments passed to the command
+                }
+            },
+            all: {   // Grunt requires at least one target to run so you can simply put 'all: {}' here too.
+                options: {
+                    args: {
+                        browser: 'chrome'
+                    }
+
+                }
+            }
         }
+
     });
 
+    grunt.registerTask('e2e', [
+        'clean:server',
+        'wiredep',
+        'concurrent:server',
+        'autoprefixer',
+        'connect:test',
+        'protractor'
+    ]);
 
     grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
         if (target === 'dist') {
@@ -401,7 +436,15 @@ module.exports = function (grunt) {
         'concurrent:test',
         'autoprefixer',
         'connect:test',
-        'karma'
+        'karma:unit'
+    ]);
+
+    grunt.registerTask('testscratch', [
+        'clean:server',
+        'concurrent:test',
+        'autoprefixer',
+        'connect:test',
+        'karma:unitscratch'
     ]);
 
     grunt.registerTask('build', [

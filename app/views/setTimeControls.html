@@ -1,0 +1,31 @@
+<div class="controlRowWrapper">
+    <div class="controlRow">
+        <span class="label"></span><span class="control up ten" ng-click="upHours()"></span>
+        <span class="label"></span><span class="control up ten" ng-click="upMinutes(10)"></span>
+        <span class="label"></span><span class="control up ten" ng-click="upSeconds(10)"></span>
+    </div>
+
+    <div class="controlRow">
+        <span class="label"></span><span class="control up one" ng-click="upHours()"></span>
+        <span class="label"></span><span class="control up one" ng-click="upMinutes(1)"></span>
+        <span class="label"></span><span class="control up one" ng-click="upSeconds(1)"></span>
+    </div>
+
+    <div class="inputRow">
+        <span class="label">Hours:</span><span class="control"><input ng-model="hours" placeholder="0" type="number" min="0" name="hours"/></span>
+        <span class="label">Minutes:</span><span class="control"><input ng-model="minutes" placeholder="0" type="number" min="0" name="minutes"/></span>
+        <span class="label">Seconds:</span><span class="control"><input ng-model="seconds" placeholder="0" type="number" min="0" name="seconds"/></span>
+    </div>
+
+    <div class="controlRow">
+        <span class="label"></span><span class="control down one" ng-click="downHours()"></span>
+        <span class="label"></span><span class="control down one" ng-click="downMinutes(1)"></span>
+        <span class="label"></span><span class="control down one" ng-click="downSeconds(1)"></span>
+    </div>
+
+    <div class="controlRow">
+        <span class="label"></span><span class="control down ten" ng-click="downHours()"></span>
+        <span class="label"></span><span class="control down ten" ng-click="downMinutes(10)"></span>
+        <span class="label"></span><span class="control down ten" ng-click="downSeconds(10)"></span>
+    </div>
+</div>

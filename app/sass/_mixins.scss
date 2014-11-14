@@ -4,3 +4,16 @@
   -ms-border-radius: $radius;
   border-radius: $radius;
 }
+
+@mixin backgroundImage($url) {
+  background: {
+    image: url($url);
+    size: contain;
+    repeat: no-repeat;
+  }
+}
+
+@mixin flexParent($direction) {
+  display: -webkit-flex;
+  -webkit-flex-direction: $direction;
+}

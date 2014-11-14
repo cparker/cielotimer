@@ -1,5 +1,7 @@
+'use strict';
+
 angular.module('cielotimerApp')
-    .factory('dataService', ['$http', function ($http) {
+    .factory('dataService', ['$http', function () {
 
         var theService = {
 

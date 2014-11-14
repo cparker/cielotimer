@@ -1,3 +1,5 @@
+'use strict';
+
 (function (window) {
 
     var WORKER_PATH = 'scripts/recorderWorker.js';
@@ -25,7 +27,7 @@
             currCallback;
 
         this.node.onaudioprocess = function (e) {
-            if (!recording) return;
+            if (!recording) { return; }
             worker.postMessage({
                 command: 'record',
                 buffer: [
@@ -57,13 +59,13 @@
 
         this.getBuffer = function (cb) {
             currCallback = cb || config.callback;
-            worker.postMessage({ command: 'getBuffer' })
+            worker.postMessage({ command: 'getBuffer' });
         };
 
         this.exportWAV = function (cb, type) {
             currCallback = cb || config.callback;
             type = type || config.type || 'audio/wav';
-            if (!currCallback) throw new Error('Callback not set');
+            if (!currCallback) { throw new Error('Callback not set'); }
             worker.postMessage({
                 command: 'exportWAV',
                 type: type
@@ -84,8 +86,8 @@
         var link = window.document.createElement('a');
         link.href = url;
         link.download = filename || 'output.wav';
-        var click = document.createEvent("Event");
-        click.initEvent("click", true, true);
+        var click = document.createEvent('Event');
+        click.initEvent('click', true, true);
         link.dispatchEvent(click);
     };
 

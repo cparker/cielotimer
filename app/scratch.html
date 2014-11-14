@@ -1,19 +1,52 @@
 <!doctype html>
 <html class="no-js">
 <head>
-    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <title></title>
     <link rel="stylesheet" href="styles/newScratch.css">
 </head>
-<body>
 
+<body ng-app="cieloScratch">
 
-<div class="boxes">
-    <div class="boxOne"></div>
-    <div class="boxTwo"></div>
-    <div class="boxThree"></div>
+<div ng-controller="scratchCtrl">
+    <div set-time></div>
+    <div>Total duration seconds {{totalDurationSeconds}}</div>
 </div>
 
+<select multiple="multiple">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+    <option>9</option>
+    <option>10</option>
+    <option>11</option>
+    <option>12</option>
+    <option>13</option>
+    <option>14</option>
+    <option>15</option>
+    <option>16</option>
+    <option>17</option>
+    <option>18</option>
+    <option>19</option>
+    <option>20</option>
+</select>
 
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="scripts/scratchApp.js"></script>
+<script src="scripts/directives/setTimerDirective.js"></script>
+<script src="scripts/controllers/scratchCtrl.js"></script>
 </body>
 </html>

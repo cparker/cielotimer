@@ -1,1 +1,7 @@
-<div>The timer config goes here</div>
+<!-- COUNT DOWN -->
+<div ng-class="{active:activeTimer=='Count Down'}" class="countDownConfig">
+    <div class="countDownConfigContainer">
+        <label>Enter seconds to count down</label>
+        <input type="number" min="0" ng-model="dataService.countDownSeconds"/>
+    </div>
+</div>

@@ -11,42 +11,32 @@ module.exports = function (config) {
         autoWatch: true,
 
         // base path, that will be used to resolve files and exclude
-        basePath: '../',
+        basePath: '../app/',
 
         // testing framework to use (jasmine/mocha/qunit/...)
         frameworks: ['jasmine'],
 
         // list of files / patterns to load in the browser
         files: [
-            'bower_components/angular/angular.js',
-            'bower_components/angular-mocks/angular-mocks.js',
-            'bower_components/angular-animate/angular-animate.js',
-            'bower_components/angular-cookies/angular-cookies.js',
-            'bower_components/angular-resource/angular-resource.js',
-            'bower_components/angular-route/angular-route.js',
-            'bower_components/angular-sanitize/angular-sanitize.js',
-            'bower_components/angular-touch/angular-touch.js',
-            'app/scripts/**/*.js',
-            'test/mock/**/*.js',
-            'test/spec/**/*.js'
+            '../bower_components/angular/angular.js',
+            '../bower_components/angular-mocks/angular-mocks.js',
+            '../bower_components/angular-animate/angular-animate.js',
+            '../bower_components/angular-cookies/angular-cookies.js',
+            '../bower_components/angular-resource/angular-resource.js',
+            '../bower_components/angular-route/angular-route.js',
+            '../bower_components/angular-sanitize/angular-sanitize.js',
+            '../bower_components/angular-touch/angular-touch.js',
+            '../app/scripts/scratchApp.js',
+            '../app/scripts/controllers/scratchCtrl.js',
+            '../app/scripts/directives/setTimerDirective.js',
+            '../test/mock/**/*.js',
+            '../test/spec/scratch/**/*.js',
+            'views/*.html'
         ],
 
         // list of files / patterns to exclude
         exclude: [
-            'app/scripts/scratchApp.js',
-            'app/scripts/controllers/scratchCtrl.js',
-            'app/scripts/directives/setTimerDirective.js'
         ],
-
-        reporters: ['progress', 'coverage'],
-
-        coverageReporter: {
-            type: 'text-summary'
-        },
-
-        preprocessors: {
-            'app/scripts/controllers/*.js': ['coverage']
-        },
 
         // web server port
         port: 8181,
@@ -67,8 +57,18 @@ module.exports = function (config) {
         plugins: [
             'karma-phantomjs-launcher',
             'karma-jasmine',
-            'karma-coverage'
+            'karma-ng-html2js-preprocessor'
         ],
+
+        preprocessors : {
+            'views/*.html' : ['ng-html2js']
+        },
+
+        ngHtml2JsPreprocessor: {
+            // setting this option will create only a single module that contains templates
+            // from all the files, so you can load them all with module('foo')
+            moduleName: 'karmaTemplates'
+        },
 
         // Continuous Integration mode
         // if true, it capture browsers, run tests and exit
