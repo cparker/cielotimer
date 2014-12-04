@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="styles/newMain.css">
     <!-- endbuild -->
 </head>
-<body ng-app="cielotimerApp">
+<body>
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your
     experience.</p>
@@ -34,7 +34,7 @@
 
         <div class="centerContainer">
             <nav ng-class="{leftNavOpen:leftNavOpen}" class="leftNav leftNavClosed">
-                <ng-include src="'/views/leftNav.html'"/>
+                <ng-include src="'views/leftNav.html'"/>
             </nav>
             <div class="center">
                 <div class="ngview" ng-view=""></div>
@@ -42,11 +42,11 @@
         </div>
 
         <div ng-controller="timerConfigCtrl" ng-class="{timerConfigActive:timerConfigActive}" class="timerConfig">
-            <ng-include src="'/views/timerConfig.html'"/>
+            <ng-include src="'views/timerConfig.html'"/>
         </div>
 
         <div class="timerButtonFooter">
-            <ng-include src="'/views/timerButtons.html'"/>
+            <ng-include src="'views/timerButtons.html'"/>
         </div>
         <div class="footer">Copyright 2014-2015 Crossfit Cielo</div>
     </div>
@@ -71,6 +71,7 @@
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/moment/moment.js"></script>
 <!-- endbower -->
+<script src="bower_components/cordova/cordova.ios.js"></script>
 <!-- endbuild -->
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
@@ -82,6 +83,10 @@
 <script src="scripts/controllers/dataService.js"></script>
 <script src="scripts/controllers/rootCtrl.js"></script>
 <script src="scripts/controllers/timerConfigCtrl.js"></script>
+<script src="scripts/bootstrapper.js"></script>
 <!-- endbuild -->
+
+<script type="text/javascript" src="cordova.js"></script>
+
 </body>
 </html>

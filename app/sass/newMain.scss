@@ -3,7 +3,7 @@
 @import 'colors';
 
 .burger {
-  @include backgroundImage('/images/burger-light-yel.png');
+  @include backgroundImage('../images/burger-light-yel.png');
   height: 6.0vw;
   width: 6.0vw;
   cursor: pointer;
@@ -82,7 +82,7 @@ main {
   @include flexParent(row);
   width: 100%;
   font-size: 26vw;
-  font-family: "Impact" sans-serif;
+  font-family: "Impact", sans-serif;
   cursor: pointer;
 }
 
@@ -192,7 +192,7 @@ main {
 }
 
 .rightHeader {
-  @include backgroundImage('/images/mic-light-yel.png');
+  @include backgroundImage('../images/mic-light-yel.png');
   height: 6.0vw;
   width: 6.0vw;
   cursor: pointer;

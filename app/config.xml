@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns="http://www.w3.org/ns/widgets"
+        xmlns:gap="http://phonegap.com/ns/1.0"
+        id="us.cjparker.cielotimer"
+        versionCode="1"
+        version="0.0.1">
+
+  <!-- versionCode is optional and Android only -->
+
+  <name>crossfit-cielo-timer</name>
+
+  <description>
+    Crossfit Cielo Timer
+  </description>
+
+  <author href="https://github.com/cparker/cielotimer" email="cp@cjparker.us">
+    Christian Parker
+  </author>
+
+  <gap:platform name="ios"/>
+
+  <content src="index.html"/>
+
+  <preference name="Fullscreen" value="true"/>
+
+  <!-- Hide Status Bar iOS -->
+  <gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance" overwrite="true">
+    <false/>
+  </gap:config-file>
+
+  <gap:config-file platform="ios" parent="UIStatusBarHidden" overwrite="true">
+    <true/>
+  </gap:config-file>
+
+  <access origin="*"/>
+
+</widget>
