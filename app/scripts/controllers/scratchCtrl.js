@@ -8,6 +8,8 @@
  * Controller of the cielotimerApp
  */
 angular.module('cieloScratch')
-    .controller('scratchCtrl', function ($scope) {
-        $scope.hello = 'world';
-    });
+  .controller('scratchCtrl', function ($scope) {
+    $scope.hello = 'world';
+    $scope.on = false;
+
+  });

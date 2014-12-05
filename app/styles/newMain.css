@@ -54,7 +54,7 @@ header {
   -webkit-flex-direction: row;
   -webkit-flex: 1;
   -webkit-justify-content: space-between;
-  background-color: #252432; }
+  background-color: gray; }
 
 main {
   height: 100%; }
@@ -68,25 +68,25 @@ main {
   display: -webkit-flex;
   -webkit-flex-direction: row;
   -webkit-flex: 8;
-  background-color: #252432; }
+  background-color: gray; }
 
 .center {
   -webkit-flex: 1;
-  background-color: #252432; }
+  background-color: gray; }
 
 .footer {
-  background-color: #252432;
+  background-color: gray;
   -webkit-flex: 0.3;
   text-align: center;
-  color: #fffcc4;
+  color: white;
   font-size: 1.0vw; }
 
 .timerButtonFooter {
   -webkit-flex: 2;
-  background-color: #252432; }
+  background-color: gray; }
 
 .leftNav {
-  background-color: lightblue;
+  background-color: #c8c8c8;
   -webkit-transition: 0.5s;
   white-space: nowrap;
   font-size: 2vw; }
@@ -97,7 +97,8 @@ main {
   padding-left: 10px; }
 
 .leftNavClosed {
-  width: 0; }
+  width: 0;
+  overflow: hidden; }
 
 .leftNavOpen {
   width: 14%; }
@@ -116,7 +117,7 @@ main {
 
 .topBanner {
   font-size: 4vw;
-  color: #fffcc4; }
+  color: white; }
 
 .timerInner {
   padding-left: 5px;
@@ -126,7 +127,7 @@ main {
   text-align: left;
   overflow: hidden;
   text-overflow: clip;
-  color: #fffcc4; }
+  color: white; }
 
 .timerPrestart {
   -webkit-flex: 0; }
@@ -146,7 +147,7 @@ main {
   .timerSubtext .tabataRound {
     -webkit-flex: 5.60;
     font-size: 5vw;
-    color: #fffcc4; }
+    color: white; }
 
 .timerControls {
   display: -webkit-flex;
@@ -163,17 +164,15 @@ main {
     font-size: 7vh; }
   .timerControls .start {
     cursor: pointer;
-    background-color: green; }
+    background-color: #5a5a5a; }
   .timerControls .stop {
     cursor: pointer;
-    background-color: red; }
+    background-color: #c8c8c8; }
 
 .timerConfig {
-  background-color: rgba(59, 60, 63, 0.82);
+  background-color: rgba(210, 210, 210, 0.82);
   height: 0;
   -webkit-transition: 0.7s;
-  white-space: nowrap;
-  text-overflow: clip;
   overflow: hidden; }
   .timerConfig .countDownConfig {
     display: block; }
@@ -189,7 +188,7 @@ main {
     display: inherit; }
 
 .timerConfigActive {
-  height: 70%; }
+  height: 50%; }
 
 .rightHeader {
   background-image: url("../images/mic-light-yel.png");

@@ -128,5 +128,32 @@ input[type="number"].focus {
   .timerDigits {
     font-size: 20vw;
     color: orange; } }
+.scratch-overlap {
+  font-size: 8.5rem; }
+
+.gobig {
+  height: 80%; }
+
+.gosmall {
+  height: 0; }
+
+.scratch-parent {
+  display: flex;
+  -webkit-flex-direction: column;
+  background-color: lightgray;
+  height: 500px; }
+
+.scratch-one {
+  background-color: orange;
+  flex: 4;
+  color: white;
+  overflow: hidden;
+  white-space: nowrap; }
+
+.scratch-two {
+  background-color: purple;
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-transition: 0.5s; }
 
 /*# sourceMappingURL=newScratch.css.map */
