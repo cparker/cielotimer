@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Exo:800|Exo+2:800|Titillium+Web:900,700|Open+Sans:800);
 html,
 body,
 ul,
@@ -41,18 +42,81 @@ a {
   a:hover {
     font-weight: bold; }
 
+input[type="number"] {
+  padding: 10px;
+  border: solid 5px #c9c9c9;
+  transition: border 0.3s;
+  font-size: 1.8rem;
+  padding-top: 4px;
+  padding-bottom: 4px; }
+
+input[type="number"]:focus,
+input[type="number"].focus {
+  border: solid 5px #969696; }
+
+.inputRow, .controlRow {
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 10px;
+  margin-bottom: 10px; }
+  .inputRow .label, .controlRow .label {
+    width: 10vw;
+    overflow: hidden;
+    text-align: right;
+    font-size: 2vw;
+    line-height: 55px; }
+  .inputRow .control, .controlRow .control {
+    width: 7vw;
+    display: inherit; }
+
+.controlRow .control {
+  text-align: center;
+  display: inline;
+  height: 6.0vh;
+  width: 6.0vw;
+  margin-left: -20px; }
+
+.controlRowWrapper {
+  width: 65%;
+  margin: auto; }
+
+.control.up.one {
+  background-image: url("/images/chevUp.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: 96%; }
+
+.control.down.one {
+  background-image: url("/images/chevDown.png");
+  background-size: contain;
+  background-repeat: no-repeat; }
+
+.control.up.ten {
+  background-image: url("/images/chev2Up.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: 86%; }
+
+.control.down.ten {
+  background-image: url("/images/chev2Down.png");
+  background-size: contain;
+  background-repeat: no-repeat; }
+
 .burger {
   background-image: url("../images/burger-light-yel.png");
   background-size: contain;
   background-repeat: no-repeat;
-  height: 6.0vw;
-  width: 6.0vw;
-  cursor: pointer; }
+  height: 7.0vw;
+  width: 7.0vw;
+  cursor: pointer;
+  margin: 20px; }
 
 header {
   display: -webkit-flex;
   -webkit-flex-direction: row;
-  -webkit-flex: 1;
+  -webkit-flex: 2;
   -webkit-justify-content: space-between;
   background-color: gray; }
 
@@ -68,7 +132,8 @@ main {
   display: -webkit-flex;
   -webkit-flex-direction: row;
   -webkit-flex: 8;
-  background-color: gray; }
+  background-color: gray;
+  overflow: hidden; }
 
 .center {
   -webkit-flex: 1;
@@ -111,8 +176,8 @@ main {
   display: -webkit-flex;
   -webkit-flex-direction: row;
   width: 100%;
-  font-size: 26vw;
-  font-family: "Impact", sans-serif;
+  font-size: 25.6vw;
+  font-family: "Exo", sans-serif;
   cursor: pointer; }
 
 .topBanner {
@@ -130,13 +195,13 @@ main {
   color: white; }
 
 .timerPrestart {
-  -webkit-flex: 0; }
+  -webkit-flex: 0.08; }
 
 .timerLeftSpacer {
-  -webkit-flex: 0.7; }
+  -webkit-flex: 0.2; }
 
 .timerRightSpacer {
-  -webkit-flex: 0.7; }
+  -webkit-flex: 0.2; }
 
 .timerSubtext {
   display: -webkit-flex;
@@ -173,7 +238,8 @@ main {
   background-color: rgba(210, 210, 210, 0.82);
   height: 0;
   -webkit-transition: 0.7s;
-  overflow: hidden; }
+  overflow: hidden;
+  z-index: 2; }
   .timerConfig .countDownConfig {
     display: block; }
     .timerConfig .countDownConfig .countDownConfigContainer {
@@ -188,14 +254,16 @@ main {
     display: inherit; }
 
 .timerConfigActive {
-  height: 50%; }
+  height: 50%;
+  border: 10px solid darkgray; }
 
 .rightHeader {
   background-image: url("../images/mic-light-yel.png");
   background-size: contain;
   background-repeat: no-repeat;
-  height: 6.0vw;
-  width: 6.0vw;
-  cursor: pointer; }
+  height: 7.0vw;
+  width: 7.0vw;
+  cursor: pointer;
+  margin: 20px; }
 
 /*# sourceMappingURL=newMain.css.map */

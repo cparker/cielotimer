@@ -1,17 +1,20 @@
 @import 'base';
 @import 'mixins';
 @import 'colors';
+@import 'timerDirective';
+@import url(http://fonts.googleapis.com/css?family=Exo:800|Exo+2:800|Titillium+Web:900,700|Open+Sans:800);
 
 .burger {
   @include backgroundImage('../images/burger-light-yel.png');
-  height: 6.0vw;
-  width: 6.0vw;
+  height: 7.0vw;
+  width: 7.0vw;
   cursor: pointer;
+  margin:20px;
 }
 
 header {
   @include flexParent(row);
-  -webkit-flex: 1;
+  -webkit-flex: 2;
   -webkit-justify-content: space-between;
   background-color: $headerColor;
 }
@@ -29,6 +32,7 @@ main {
   @include flexParent(row);
   -webkit-flex: 8;
   background-color: $centerColor;
+  overflow: hidden;
 }
 
 .center {
@@ -82,8 +86,8 @@ main {
 .timer {
   @include flexParent(row);
   width: 100%;
-  font-size: 26vw;
-  font-family: "Impact", sans-serif;
+  font-size: 25.6vw;
+  font-family: "Exo", sans-serif;
   cursor: pointer;
 }
 
@@ -106,15 +110,15 @@ main {
 }
 
 .timerPrestart {
-  -webkit-flex: 0;
+  -webkit-flex: 0.08;
 }
 
 .timerLeftSpacer {
-  -webkit-flex: 0.7;
+  -webkit-flex: 0.2;
 }
 
 .timerRightSpacer {
-  -webkit-flex: 0.7;
+  -webkit-flex: 0.2;
 }
 
 .timerSubtext {
@@ -163,6 +167,7 @@ main {
   height: 0;
   -webkit-transition: 0.7s;
   overflow: hidden;
+  z-index:2;
 
   .countDownConfig {
     display: block;
@@ -188,13 +193,15 @@ main {
 
 .timerConfigActive {
   height:50%;
+  border:10px solid darkgray;
 }
 
 .rightHeader {
   @include backgroundImage('../images/mic-light-yel.png');
-  height: 6.0vw;
-  width: 6.0vw;
+  height: 7.0vw;
+  width: 7.0vw;
   cursor: pointer;
+  margin:20px;
 }
 
 

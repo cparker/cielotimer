@@ -1,0 +1,71 @@
+input[type="number"] {
+  padding: 10px;
+  border: solid 5px #c9c9c9;
+  transition: border 0.3s;
+  font-size: 1.8rem;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+input[type="number"]:focus,
+input[type="number"].focus {
+  border: solid 5px #969696;
+}
+
+.inputRow, .controlRow {
+  @include flexParent(row);
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  .label {
+    width: 10vw;
+    overflow: hidden;
+    text-align: right;
+    font-size: 2vw;
+    line-height: 55px;
+  }
+
+  .control {
+    width: 7vw;
+    display: inherit;
+  }
+}
+
+.controlRow .control {
+  text-align: center;
+  display: inline;
+  height: 6.0vh;
+  width: 6.0vw;
+  margin-left: -20px;
+}
+
+.controlRowWrapper {
+  width: 65%;
+  margin:auto;
+}
+
+.control.up {
+}
+
+.control.up.one {
+  @include backgroundImage('/images/chevUp.png');
+  background-position-y: 96%;
+}
+
+.control.down.one {
+  @include backgroundImage('/images/chevDown.png');
+}
+
+.control.up.ten {
+  @include backgroundImage('/images/chev2Up.png');
+  background-position-y: 86%;
+}
+
+.control.down.ten {
+  @include backgroundImage('/images/chev2Down.png');
+}
+
+.control.down {
+}

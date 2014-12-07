@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('cieloScratch')
+angular.module('cielotimerApp')
     .directive('setTime', ['$interval', '$timeout', function ($interval, $timeout) {
 
 
