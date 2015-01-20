@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('cielotimerApp')
-    .directive('setTime', ['$interval', '$timeout', function ($interval, $timeout) {
+    .directive('setTime', ['$interval', '$timeout', 'dataService', function ($interval, $timeout, dataService) {
 
 
         var link = function (scope, element, attrs) {
@@ -40,6 +40,10 @@ angular.module('cielotimerApp')
                 scope.seconds = Math.max(0, scope.seconds - (n || 1));
                 scope.totalDurationSeconds = Math.max(0, scope.totalDurationSeconds - (n || 1));
             };
+
+            scope.$watch('totalDurationSeconds', function(newVal, oldVal) {
+              dataService.countDownSeconds = newVal;
+            });
 
         };
 
