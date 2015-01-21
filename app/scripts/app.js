@@ -22,32 +22,26 @@ angular
 
         $routeProvider
             .when('/', {
-                templateUrl: 'views/countUp.html',
-                controller: 'timerCtrl'
+                templateUrl: 'views/countUp.html'
             })
             .when('/about', {
                 templateUrl: 'views/about.html',
                 controller: 'AboutCtrl'
             })
             .when('/countUp', {
-                templateUrl: 'views/countUp.html',
-                controller: 'timerCtrl'
+                templateUrl: 'views/countUp.html'
             })
             .when('/countDown', {
-                templateUrl: 'views/countDown.html',
-                controller: 'timerCtrl'
+                templateUrl: 'views/countDown.html'
             })
             .when('/tabata', {
-                templateUrl: 'views/tabata.html',
-                controller: 'timerCtrl'
+                templateUrl: 'views/tabata.html'
             })
             .when('/interval', {
-                templateUrl: 'views/interval.html',
-                controller: 'timerCtrl'
+                templateUrl: 'views/interval.html'
             })
             .when('/preferences', {
-                templateUrl: 'views/prefs.html',
-                controller: 'timerCtrl'
+                templateUrl: 'views/prefs.html'
             })
             .when('/audio', {
                 templateUrl: 'views/audio.html',

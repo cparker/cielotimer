@@ -1,6 +1,6 @@
 <div ng-click="toggleTimerConfig()" class="timer" >
     <div class="timerLeftSpacer">&nbsp;</div>
-    <div class="timerInner" ng-class="{timerPrestart:timerState == 'prestart'}">{{currentTimerString}}</div>
+    <div class="timerInner" ng-class="{timerPrestart:timerState == 'countdown' || timerState == 'countdownPaused'}">{{timerService.timerString}}</div>
     <div class="timerRightSpacer">&nbsp;</div>
 </div>
 
