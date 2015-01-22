@@ -1,6 +1,8 @@
 node_modules
 dist
+www
 .tmp
 .sass-cache
 bower_components
 .idea
+*.css.map

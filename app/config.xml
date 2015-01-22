@@ -32,6 +32,10 @@
     <true/>
   </gap:config-file>
 
+  <feature name="Media">
+    <param name="ios-package" value="CDVSound" />
+  </feature>
+
   <access origin="*"/>
 
 </widget>

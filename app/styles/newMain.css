@@ -105,6 +105,22 @@ input[type="number"].focus {
   background-size: contain;
   background-repeat: no-repeat; }
 
+.audio-main {
+  border: 1px solid blue;
+  margin-left: 2.0em;
+  margin-right: 2.0em;
+  height: 40vh; }
+  .audio-main .button {
+    background-color: lightgray;
+    width: 15vw;
+    line-height: 7.3vh;
+    text-align: center;
+    -webkit-border-radius: 8px;
+    color: white;
+    font-size: 5vh;
+    cursor: pointer;
+    margin: 6px; }
+
 .burger {
   background-image: url("../images/burger-light-yel.png");
   background-size: contain;

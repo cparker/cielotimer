@@ -28,6 +28,7 @@ angular.module('cielotimerApp')
 
       var timerVariationCountUp = 'countUp';
       var timerVariationCountDown = 'countDown';
+      var timerVariationTabata = 'tabata';
 
       var countdownFormat = 's';
 
@@ -44,8 +45,8 @@ angular.module('cielotimerApp')
         $scope.timerFormat = 'mm:ss.S';
         $scope.countdownFormat = 's';
 
-        $rootScope.dataService = dataService;
-        $rootScope.timerService = timerService;
+        $scope.dataService = dataService;
+        $scope.timerService = timerService;
 
         timerService.timerMSValue = 0;
         timerService.timerString = '00:00.0';
@@ -133,6 +134,7 @@ angular.module('cielotimerApp')
           console.log('timer finished');
           // todo : alert
           $scope.timerState = timerStateInit;
+          $scope.leftButtonLabel = leftButtonStartLabel;
         }
 
       });
@@ -150,8 +152,8 @@ angular.module('cielotimerApp')
           $scope.timerInterval = $interval($scope.handleTimerTick, timerIncrementMS);
         }
 
-        else if ($scope.timerVariation === timerVariationCountDown) {
-          // todo : the timerMSValue needs to already be set to something
+        else if ($scope.timerVariation === timerVariationCountDown && $scope.timerService.configuredSeconds) {
+          $scope.timerService.timerMSValue = timerService.configuredSeconds * 1000;
           $scope.timerInterval = $interval($scope.handleTimerTick, timerIncrementMS);
         }
 
@@ -236,12 +238,15 @@ angular.module('cielotimerApp')
         switch ($location.path()) {
           case '/countUp':
             $scope.activeTimer = 'Count Up';
+            $scope.timerVariation = timerVariationCountUp;
             break;
           case '/countDown':
             $scope.activeTimer = 'Count Down';
+            $scope.timerVariation = timerVariationCountDown;
             break;
           case'/tabata':
             $scope.activeTimer = 'Tabata';
+            $scope.timerVariation = timerVariationTabata;
             break;
           case '/interval':
             $scope.activeTimer = 'Interval';
@@ -263,8 +268,8 @@ angular.module('cielotimerApp')
         $scope.activeTimer = t;
       };
 
-      $rootScope.toggleTimerConfig = function () {
-        $rootScope.timerConfigActive = !$rootScope.timerConfigActive;
+      $scope.toggleTimerConfig = function () {
+        $scope.timerConfigActive = !$scope.timerConfigActive;
       };
 
 
@@ -274,11 +279,11 @@ angular.module('cielotimerApp')
       };
 
       $scope.startTimer = function () {
-        $rootScope.$broadcast('startTimer');
+        $scope.$broadcast('startTimer');
       };
 
       $scope.stopTimer = function () {
-        $rootScope.$broadcast('stopTimer');
+        $scope.$broadcast('stopTimer');
       };
 
 

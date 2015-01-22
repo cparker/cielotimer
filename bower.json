@@ -11,7 +11,8 @@
     "angular-animate": "~1.2.0",
     "angular-touch": "~1.2.0",
     "angular-route": "~1.2.0",
-    "moment": "~2.8.3"
+    "moment": "~2.8.3",
+    "cordova": "~3.4.0"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.0",
