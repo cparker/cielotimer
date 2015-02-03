@@ -122,7 +122,7 @@ input[type="number"].focus {
     margin: 6px; }
 
 .burger {
-  background-image: url("../images/burger-light-yel.png");
+  background-image: url("../images/burger-white.png");
   background-size: contain;
   background-repeat: no-repeat;
   height: 7.0vw;
@@ -275,7 +275,7 @@ main {
   border: 10px solid darkgray; }
 
 .rightHeader {
-  background-image: url("../images/mic-light-yel.png");
+  background-image: url("../images/mic-white.png");
   background-size: contain;
   background-repeat: no-repeat;
   height: 7.0vw;
