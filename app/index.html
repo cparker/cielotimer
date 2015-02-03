@@ -1,55 +1,56 @@
 <!doctype html>
 <html class="no-js">
 <head>
-    <meta charset="utf-8">
-    <title>cielotimer</title>
-    <meta name="description" content="">
-    <meta name = "viewport" content = "user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/newMain.css">
-    <!-- endbuild -->
+  <meta charset="utf-8">
+  <title>cielotimer</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/newMain.css">
+  <!-- endbuild -->
 </head>
 <body>
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your
-    experience.</p>
+  experience.</p>
 <![endif]-->
 
 <div ng-class="{coverGreen : coverGreen, coverFadeout : coverFadeout}" class="cover"></div>
 
 <main ng-controller="rootCtrl">
-    <div class="mainContainer">
-        <header>
-            <div class="burger" ng-click="toggleBurger()"></div>
-            <div class="topBanner">{{activeTimer}}</div>
-            <a href="#/audio">
-                <div class="rightHeader"></div>
-            </a>
-        </header>
+  <div class="mainContainer">
+    <header>
+      <div class="burger" ng-click="toggleBurger()"></div>
+      <div class="topBanner">{{activeTimer}}</div>
+      <div class="rightHeader" ng-click="toggleTimerOptions()"></div>
+    </header>
 
-        <div class="centerContainer">
-            <nav ng-class="{leftNavOpen:leftNavOpen}" class="leftNav leftNavClosed">
-                <ng-include src="'views/leftNav.html'"/>
-            </nav>
-            <div class="center">
-                <div class="ngview" ng-view=""></div>
-            </div>
-        </div>
-
-        <div ng-class="{timerConfigActive:timerConfigActive}" class="timerConfig">
-            <ng-include src="'views/timerConfig.html'"/>
-        </div>
-
-        <div class="timerButtonFooter">
-            <ng-include src="'views/timerButtons.html'"/>
-        </div>
-        <div class="footer">Copyright 2014-2015 Crossfit Cielo</div>
+    <div class="centerContainer">
+      <nav ng-class="{leftNavOpen:leftNavOpen}" class="leftNav leftNavClosed">
+        <ng-include src="'views/leftNav.html'"/>
+      </nav>
+      <div class="center">
+        <div class="ngview" ng-view=""></div>
+      </div>
+      <nav ng-class="{'right-slider-open':rightSliderOpen}" class="right-slider right-slider-closed">
+        <ng-include src="'views/rightNav.html'"
+      </nav>
     </div>
+
+    <div ng-class="{timerConfigActive:timerConfigActive}" class="timerConfig">
+      <ng-include src="'views/timerConfig.html'"/>
+    </div>
+
+    <div class="timerButtonFooter">
+      <ng-include src="'views/timerButtons.html'"/>
+    </div>
+    <div class="footer">Copyright 2014-2015 Crossfit Cielo</div>
+  </div>
 </main>
 
 

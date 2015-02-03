@@ -56,6 +56,7 @@ angular.module('cielotimerApp')
         $scope.timerConfigActive = false;
 
         $scope.leftNavOpen = false;
+        $scope.rightSliderOpen = false;
       };
 
 
@@ -274,8 +275,11 @@ angular.module('cielotimerApp')
 
 
       $scope.toggleBurger = function () {
-        console.log('burger');
         $scope.leftNavOpen = !$scope.leftNavOpen;
+      };
+
+      $scope.toggleTimerOptions = function () {
+        $scope.rightSliderOpen = !$scope.rightSliderOpen;
       };
 
       $scope.startTimer = function () {
@@ -290,4 +294,5 @@ angular.module('cielotimerApp')
       //$scope.currentTimerString = moment($scope.currentTimerMS).format($scope.timerFormat);
 
       $scope.init();
+
     }]);

@@ -133,7 +133,7 @@ input[type="number"].focus {
 header {
   display: -webkit-flex;
   -webkit-flex-direction: row;
-  -webkit-flex: 2;
+  -webkit-flex: 1.8;
   -webkit-justify-content: space-between;
   background-color: gray; }
 
@@ -168,12 +168,44 @@ main {
   background-color: gray; }
 
 .leftNav {
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  height: 82vh;
+  position: absolute;
   background-color: #c8c8c8;
   -webkit-transition: 0.5s;
   white-space: nowrap;
   font-size: 2vw; }
   .leftNav .active {
     font-weight: bold; }
+  .leftNav .left-nav-item {
+    margin-left: 10px; }
+  .leftNav .timer-types {
+    margin-top: 20px; }
+  .leftNav .other-actions {
+    margin-top: 20px; }
+
+.right-slider {
+  overflow: hidden;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  height: 82vh;
+  position: relative;
+  background-color: #c8c8c8;
+  -webkit-transition: 0.5s;
+  white-space: nowrap;
+  font-size: 2vw;
+  width: 300px; }
+  .right-slider .active {
+    font-weight: bold; }
+
+.right-slider-closed {
+  right: 0; }
+
+.right-slider-open {
+  right: -300px; }
 
 .leftNav ul {
   padding-left: 10px; }
@@ -183,7 +215,7 @@ main {
   overflow: hidden; }
 
 .leftNavOpen {
-  width: 14%; }
+  width: 30%; }
 
 .ngview {
   width: 100%;
@@ -275,7 +307,7 @@ main {
   border: 10px solid darkgray; }
 
 .rightHeader {
-  background-image: url("../images/mic-white.png");
+  background-image: url("../images/pencil-white.png");
   background-size: contain;
   background-repeat: no-repeat;
   height: 7.0vw;

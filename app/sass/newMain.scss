@@ -6,7 +6,7 @@
 @import url(http://fonts.googleapis.com/css?family=Exo:800|Exo+2:800|Titillium+Web:900,700|Open+Sans:800);
 
 .burger {
-  @include backgroundImage('../images/burger-light-yel.png');
+  @include backgroundImage('../images/burger-white.png');
   height: 7.0vw;
   width: 7.0vw;
   cursor: pointer;
@@ -15,7 +15,7 @@
 
 header {
   @include flexParent(row);
-  -webkit-flex: 2;
+  -webkit-flex: 1.8;
   -webkit-justify-content: space-between;
   background-color: $headerColor;
 }
@@ -55,6 +55,11 @@ main {
 }
 
 .leftNav {
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+  height:82vh;
+  position:absolute;
   background-color: $leftNavColor;
   -webkit-transition: 0.5s;
   white-space: nowrap;
@@ -64,6 +69,46 @@ main {
     font-weight: bold;
   }
 
+  .left-nav-item {
+    margin-left:10px;
+  }
+
+  .timer-types {
+    margin-top:20px;
+  }
+
+  .other-actions {
+    margin-top:20px;
+  }
+
+
+}
+
+.right-slider {
+
+  overflow:hidden;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+  height:82vh;
+  position:relative;
+  background-color: $leftNavColor;
+  -webkit-transition: 0.5s;
+  white-space: nowrap;
+  font-size: 2vw;
+  width:300px;
+
+  .active {
+    font-weight: bold;
+  }
+}
+
+.right-slider-closed {
+  right:0;
+}
+
+.right-slider-open {
+  right:-300px;
 }
 
 .leftNav ul {
@@ -76,7 +121,7 @@ main {
 }
 
 .leftNavOpen {
-  width: 14%;
+  width: 30%;
 }
 
 .ngview {
@@ -198,7 +243,7 @@ main {
 }
 
 .rightHeader {
-  @include backgroundImage('../images/mic-light-yel.png');
+  @include backgroundImage('../images/pencil-white.png');
   height: 7.0vw;
   width: 7.0vw;
   cursor: pointer;
