@@ -290,6 +290,10 @@ angular.module('cielotimerApp')
         $scope.$broadcast('stopTimer');
       };
 
+      $scope.isManageVoicePromptsActive = function() {
+        return $location.path() == '/manageVoicePrompts';
+      };
+
 
       //$scope.currentTimerString = moment($scope.currentTimerMS).format($scope.timerFormat);
 

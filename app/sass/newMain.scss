@@ -3,6 +3,7 @@
 @import 'colors';
 @import 'timerDirective';
 @import 'audio';
+@import 'managePrompts';
 @import url(http://fonts.googleapis.com/css?family=Exo:800|Exo+2:800|Titillium+Web:900,700|Open+Sans:800);
 
 .burger {
@@ -26,7 +27,7 @@ main {
 
 .mainContainer {
   @include flexParent(column);
-  height: 100%;
+  height: 101%;
 }
 
 .centerContainer {
@@ -86,6 +87,7 @@ main {
 
 .right-slider {
 
+  border: 1px solid yellow;
   overflow:hidden;
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;

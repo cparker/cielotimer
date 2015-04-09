@@ -6,3 +6,4 @@ www
 bower_components
 .idea
 *.css.map
+app/styles/*

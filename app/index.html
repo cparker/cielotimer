@@ -37,16 +37,17 @@
       <div class="center">
         <div class="ngview" ng-view=""></div>
       </div>
-      <nav ng-class="{'right-slider-open':rightSliderOpen}" class="right-slider right-slider-closed">
+      <!-- have to comment this out because it's jacking up the whole right hand side of the page -->
+      <!--nav ng-class="{'right-slider-open':rightSliderOpen}" class="right-slider right-slider-closed">
         <ng-include src="'views/rightNav.html'"
-      </nav>
+      </nav-->
     </div>
 
     <div ng-class="{timerConfigActive:timerConfigActive}" class="timerConfig">
       <ng-include src="'views/timerConfig.html'"/>
     </div>
 
-    <div class="timerButtonFooter">
+    <div ng-hide="isManageVoicePromptsActive()" class="timerButtonFooter">
       <ng-include src="'views/timerButtons.html'"/>
     </div>
     <div class="footer">Copyright 2014-2015 Crossfit Cielo</div>

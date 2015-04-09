@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAQ,yGAAiG",
-"sources": ["../sass/timerDirective.scss"],
-"names": [],
-"file": "timerDirective.css"
-}
